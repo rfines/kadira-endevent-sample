@@ -1,0 +1,63 @@
+
+
+<head>
+  	<title>kadira-publish-endevent</title>
+</head>
+<template name="layout">
+	
+	<body>
+	  	<h1>Welcome to My Sample App!</h1>
+	  	<div class="container">
+	  		{{> yield}}
+	  	</div>
+	  
+	</body>
+</template>
+<template name="hello">
+
+	<div class="jumbotron">
+  	<h3>This is a sample repo for showing the kadira endevent bug that I am seeing in my project.</h3>
+  	<p>I am using the <a href="https://github.com/englue/meteor-publish-composite/">reywood:publish-composite package</a> along with <a href="https:kadira.io">Kadira</a> and <a href="https://github.com/iron-meteor/iron-router">iron:router</a>.</p>
+	<ul class="list-unstyled">
+	  	{{#each blogs}}
+	  	<li>
+	  		<div class="media">
+			  	<div class="media-left">
+				    <a href="#">
+				      	<img class="media-object" src="http://placehold.it/150x150" alt="placeholder">
+				    </a>
+			  	</div>
+			  	<div class="media-body">
+			    	<h4 class="media-heading">{{title}}</h4>
+			    	<div class="row">
+			    		<div class="col-md-12">{{body}}</div>
+			    		<div class="col-md-12">{{categories}}</div>
+			    	</div>
+			    	<div class="row">
+			    		<div class="col-md-12"><h4>Comments</h4>
+				    		{{#each comments}}
+				    			<div class="media">
+								  	<div class="media-left">
+									    <a href="#">
+									      	<img class="media-object" src="http://placehold.it/50x50" alt="...">
+									    </a>
+								  </div>
+								  <div class="media-body">
+								    <h4 class="media-heading">{{commentorName}}</h4>
+									<p>{{commentBody}}</p>    
+								  </div>
+								</div>
+				    			
+				    		{{/each}}
+			    		</div>
+			    	</div>
+			    	
+			  	</div>
+			</div>
+	  	</li>
+	  	{{/each}}
+	</ul>
+  
+  </div>
+  
+</template>
